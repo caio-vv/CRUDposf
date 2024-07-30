@@ -16,7 +16,6 @@ const emailValido = email => {
 }
 
 const modelo = (id) => {
-    console.log(id)
     const nome = prompt("digite nome do usuario: ")
     const email = prompt("qual email: ")
     const telefones = []
@@ -42,7 +41,7 @@ const modelo = (id) => {
         usuario = {
             nome,
             email,
-            teleones,
+            telefones,
             id: ultimoID,
         }
         ultimoID++

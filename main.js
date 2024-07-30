@@ -16,5 +16,17 @@ while (true){
             case "1":
             cadastros.criar()
                 break;
+                case "2":
+                    cadastros.ler()
+                    break;
+                    case "3":
+                        cadastros.atualizar()
+                        break;
+                        case "4":
+                            cadastros.remover()
+                            break;
+                            case "5":
+                                process.exit()
+                                break;
         }
 }
