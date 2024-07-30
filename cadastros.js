@@ -15,7 +15,8 @@ const emailValido = email => {
     return valido && email != ""
 }
 
-const modelo = () => {
+const modelo = (id) => {
+    console.log(id)
     const nome = prompt("digite nome do usuario: ")
     const email = prompt("qual email: ")
     const telefones = []
@@ -42,11 +43,11 @@ const modelo = () => {
             nome,
             email,
             teleones,
-            id,
+            id: ultimoID,
         }
         ultimoID++
-        return usuario
     }
+    return usuario
     }
     console.log("os dados sao invalidos")
 }
@@ -65,8 +66,8 @@ const ler = () => {
         Nome: ${usuario.nome}
         EMail: ${usuario.email}`)
         console.log("telefones: ")
-        usuario.telefones.forEach(telefone => {
-            console.log("telefone ${ibduce + 1: ${telefone}")
+        usuario.telefones.forEach((telefone, indice) => {
+            console.log(`telefone ${indice + 1} ${telefone}`)
         })
     })
 }
@@ -76,22 +77,26 @@ const atualizar = () => {
     const id = prompt("digite id")
     const novo = modelo(id)
     usuarios.forEach((usuario, indice) => {
+        if(id == usuario.id){
         usuarios[indice] = novo
+        }
     })
 }
 
 const remover = () => {
     ler()
 
-    const id = promt("digite id")
+    const id = prompt("digite id")
     usuarios.forEach((usuario, indice) => {
         if(id == usuario.id){
-            const confirma = prompt("deseja remover? s para sim n par anao")
+            const confirma = prompt("deseja remover? s para sim")
             if (confirma == "s"){
                 usuarios.splice(indice, 1)
                 console.log("USUARIO REMOVIDO")
             }
         }
-        usuarios[indice] = novo
+       
     })
 }
+
+module.exports = {criar, modelo, ler, atualizar, remover}

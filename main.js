@@ -14,7 +14,7 @@ while (true){
 
         switch (opcao){
             case "1":
-            cadastros.criarUser()
+            cadastros.criar()
                 break;
         }
 }
